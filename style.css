@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --VeryDarkMagenta: hsl(300, 43%, 22%);
+    --SoftPink: hsl(333, 80%, 67%);
+    --DarkGrayishMagenta: hsl(303, 10%, 53%);
+    --LightGrayishMagenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+    --fz: 15px;
+    --ff: 'Spartan', sans-serif;
+}
+
+body {
+    font-family: var(--ff);
+    background-color: var(--White);
+    overflow: visible;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::after,
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+}
+
+body::after {
+    background-image: url(./images/bg-pattern-top-mobile.svg);
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+}
+
+body::before {
+    background-image: url(./images/bg-pattern-bottom-mobile.svg);
+    bottom: 0;
+    right: 0;
+    transform: translateX(25%);
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+main {
+    /* padding: 65px 18px; */
+    max-width: 365px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+.desc {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.desc__title {
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: var(--VeryDarkMagenta);
+    padding: 0 40px;
+    font-size: 1.8em;
+}
+
+.desc__desc {
+    font-weight: 400;
+    color: var(--VeryDarkMagenta);
+    font-size: 0.93em;
+    line-height: 1.5;
+}
+
+.star-reviews {
+    font-weight: 700;
+    color: var(--VeryDarkMagenta);
+    margin-bottom: 45px;
+}
+
+.star-reviews__item {
+    background-color: var(--LightGrayishMagenta);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 15px 0;
+}
+
+.star-reviews__item-stars {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.star-reviews__item-stars li {
+    background-image: url(./images/icon-star.svg);
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    padding: 0 10px;
+}
+
+.reviews-cards {}
+
+.reviews-cards__item {
+    background-color: var(--VeryDarkMagenta);
+    border-radius: 10px;
+    /* display: grid; */
+    /* gap: 25px 0;
+    grid-template-columns: 30% 80%; */
+    margin-bottom: 15px;
+    min-width: 175px;
+    padding: 30px;
+}
+
+.reviews-cards__item-top {
+    /* display: grid;
+    grid-template-columns: 20% 80%; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.reviews-cards__item>p {
+    /* grid-column: span 2; */
+    color: var(--White);
+    font-weight: 400;
+    margin-top: 25px;
+    font-size: 0.8em;
+    line-height: 2;
+    padding-right: 15px;
+}
+
+.reviews-cards__item-img {
+    border-radius: 50%;
+    /* width: 100%; */
+    width: 50px;
+    display: inline-block;
+}
+
+.reviews-cards__item-name {
+    display: inline-block;
+    padding-left: 20px;
+    font-size: .8em;
+    font-weight: 400;
+}
+
+.reviews-cards__item-name h3 {
+    color: var(--White);
+}
+
+.reviews-cards__item-name p {
+    color: var(--SoftPink);
+}
+
+@media (min-width:1300px) {
+    body {
+        overflow: hidden;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    body::after {
+        background-image: url(./images/bg-pattern-top-desktop.svg);
+    }
+    body::before {
+        background-image: url(./images/bg-pattern-bottom-desktop.svg);
+    }
+    main {
+        min-width: 1110px;
+        min-height: 550px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .desc {
+        max-width: 425px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        line-height: 1;
+        margin-bottom: 0;
+    }
+    .desc__title {
+        font-size: 2.5em;
+        padding: 0;
+    }
+    .desc__desc {
+        line-height: 2;
+    }
+    .star-reviews {
+        margin-bottom: 0;
+    }
+    .star-reviews__item {
+        max-width: 450px;
+        flex-direction: row;
+    }
+    .star-reviews__item:nth-child(2) {
+        margin-left: 50px;
+    }
+    .star-reviews__item:nth-child(3) {
+        margin-left: 100px;
+    }
+    .star-reviews__item-stars {
+        margin: 0;
+    }
+    .star-reviews__item-desc {
+        margin-left: 25px;
+    }
+    .reviews-cards {
+        margin-top: 80px;
+        grid-column: span 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .reviews-cards__item:nth-child(2) {
+        margin: 15px 30px 0;
+    }
+    .reviews-cards__item:nth-child(3) {
+        margin-top: 35px;
+    }
+    .reviews-cards__item {
+        min-width: 350px;
+        height: 235px;
+        font-size: .95em;
+    }
+}
